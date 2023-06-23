@@ -13,14 +13,14 @@ public class Client {
             Scanner scanner = new Scanner(System.in);
             String message, response;
             while (true) {
-                System.out.print("Enter message: ");
+                System.out.print("Введите сообщение: ");
                 message = scanner.nextLine();
                 out.println(message);
                 if ("exit".equalsIgnoreCase(message)) {
                     break;
                 }
                 response = in.readLine();
-                System.out.println("Response from server: " + response);
+                System.out.println("" + response);
             }
         } catch (IOException e) {
             e.printStackTrace();

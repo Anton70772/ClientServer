@@ -35,11 +35,14 @@ public class Server {
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 String message;
                 while ((message = in.readLine()) != null) {
-                    System.out.println("Received message from client: " + message);
-                    if ("exit".equalsIgnoreCase(message)) {
+                    System.out.println("Получено сообщение от клиента: " + message);
+                    if ("Привет".equalsIgnoreCase(message)) { // изменение условия
+                        out.println("Привет, чем я могу вам помочь?"); // изменение ответа сервера
+                    } else if ("exit".equalsIgnoreCase(message)) {
                         break;
+                    } else {
+                        out.println("Сервер получил сообщение: " + message);
                     }
-                    out.println("Server received message: " + message);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
